@@ -1,0 +1,6 @@
+# target binary
+nomail
+# editor files
+*~
+*.swp
+\#*
