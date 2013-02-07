@@ -20,7 +20,7 @@ const (
 )
 
 func sendError(conn net.Conn, code int, message string) {
-	fmtmsg := fmt.Sprintf("%03d %s\n", code, message)
+	fmtmsg := fmt.Sprintf("%03d %s\r\n", code, message)
 	conn.Write([]byte(fmtmsg))
 }
 
