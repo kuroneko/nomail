@@ -15,7 +15,7 @@ import (
 )
 
 const (
-	SmtpNoServiceHere = 554
+	SmtpNoServiceHere         = 554
 	SmtpBadSequenceOfCommands = 503
 )
 
@@ -50,7 +50,6 @@ func handleConnection(conn net.Conn) {
 		sendError(conn, SmtpBadSequenceOfCommands, "bad sequence of commands")
 	}
 }
-	
 
 func main() {
 	listener, err := net.Listen("tcp", ":8025")
@@ -63,14 +62,13 @@ func main() {
 	for {
 		conn, err := listener.Accept()
 		if err != nil {
-			fmt.Fprintf(os.Stderr, 
+			fmt.Fprintf(os.Stderr,
 				"error accepting connection: %s\n",
 				err)
-			break;
+			break
 		}
 		go handleConnection(conn)
 	}
 
 	os.Exit(0)
 }
-
