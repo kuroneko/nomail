@@ -8,8 +8,11 @@ bothered.
 
 ## Usage
 
-	$ go build .
-	$ ./nomail
+Assuming `$GOPATH` is writable and `$GOPATH/bin` is on your path
+
+	$ go get github.com/kuroneko/nomail .
+	$ hash -r
+	$ nomail
 
 This will start the listener on port 8025.  Redirect port 25 et al as 
 appropriate.
